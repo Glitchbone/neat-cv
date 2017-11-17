@@ -1,0 +1,41 @@
+\documentclass[10pt, a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage[document]{ragged2e}
+\usepackage{textcomp}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{fontspec}
+\usepackage{titlesec}
+\titleformat{\section}{\Large}{\thesection}{1em}{}[{\titlerule[0.5pt]}]
+\titleformat{\subsection}{\normalsize\bfseries}{\thesection}{1em}{}
+\titlespacing*{\subsection}{0pt}{.8em}{.2em}
+$if(config_font)$
+\setmainfont{$config_font$}
+$endif$
+\urlstyle{same}
+\setlength\parindent{0in}
+\setcounter{secnumdepth}{-1}
+\renewcommand{\baselinestretch}{1.3}
+\pagenumbering{gobble}
+
+\begin{document}
+
+{\LARGE $name$\par}
+{\large $title$\par}
+\medskip
+
+$if(informations)$
+$informations$\par
+\medskip
+$endif$
+
+$if(introduction)$
+\begin{flushright}
+{\em $introduction$}
+\end{flushright}
+$endif$
+
+$body$
+
+\end{document}
